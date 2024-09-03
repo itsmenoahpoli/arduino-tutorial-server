@@ -13,6 +13,12 @@ return new class extends Migration
     {
         Schema::create('arduino_tutorials', function (Blueprint $table) {
             $table->id();
+            $table->string('vid_uid')->unique();
+            $table->string('title')->unique();
+            $table->string('title_slug')->unique();
+            $table->text('description')->nullable();
+            $table->string('cover_img_src');
+            $table->string('video_src');
             $table->timestamps();
         });
     }
